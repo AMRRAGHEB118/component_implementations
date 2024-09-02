@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+        }
+        
+        .progress-bar {
+            position: relative;
+            width: 200px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-bar::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(86.21deg, #8DC63F 3.24%, #27AAE1 91.34%);
+            transition: width 0.5s ease;
+        }
+
+        .progress-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            background-color: #f3f3f3;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-size: 40px 40px;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            background: #FFF7EC;
+        }
+
+        .progress-bar::before {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 80%;
+            background: repeating-linear-gradient(
+                -45deg,
+                #67e767,
+                #67e767 10px,
+                #fff 10px,
+                #fff 20px
+            ),
+            linear-gradient(86.21deg, #8DC63F 3.24%, #27AAE1 91.34%);
+            background-blend-mode: overlay;
+            border-radius: 50px;
+        }
+
+        .progress-text {
+            position: absolute;
+            color: #aaa;
+            font-size: 16px;
+            top: -20px;
+        }
+
+        .progress-text-left {
+            left: 0;
+        }
+
+        .progress-text-right {
+            right: 0;
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="progress-container">
+        <span class="progress-text progress-text-left">0</span>
+        <div class="progress-bar"></div>
+        <span class="progress-text progress-text-right">600</span>
+    </div>
+</body>
+</html>
